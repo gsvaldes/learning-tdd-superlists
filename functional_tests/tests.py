@@ -89,7 +89,7 @@ class NewVisitorTest(LiveServerTestCase):
         # Satisified, she goes back to sleep
         
         
-        self.fail('Finish the Test!')      
+       # self.fail('Finish the Test!')      
 
     def test_layout_and_styling(self):
         # Edith goes to the home page
@@ -107,12 +107,15 @@ class NewVisitorTest(LiveServerTestCase):
         # She starts a new list and sees that the input is 
         # nicely centered there too
         inputbox.send_keys('testing\n')
+        self.browser.set_window_size(1024, 768) ## not in original ex
         inputbox = self.browser.find_element_by_tag_name('input')
         self.assertAlmostEqual(
             inputbox.location['x'] + inputbox.size['width'] / 2,
             512,
             delta =3
-        )       
+        )   
+
+        self.fail('Finish the Test!')     
                                
         
 
